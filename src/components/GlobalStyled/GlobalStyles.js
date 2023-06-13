@@ -13,20 +13,29 @@ export const GlobalStyles = createGlobalStyle`
         --bg: #18181b;
         --bg-2: #27272a;
         --text: #e4e4e7;
-        --text-2: #a3e635;
+        --text-2: #c5c5c7;
+        --ui: #a3e635;
+        --ui-2: #B8EC62;
         --regular: 300;
         --semibold: 600;
         --bold: 800;
         --h-nav: 80px;
         --max-w: 1300px;
         --radius: 5px;
+        --size-icon: 1.2rem;
     }
 
 
     body{
+        font-size: 16px;
         font-family: 'Montserrat', sans-serif;
         color: var(--text);
         background-color: var(--bg);
+    }
+
+    h1,h2{
+        margin: 0;
+        margin-bottom: .8rem;
     }
 
     a{
@@ -38,6 +47,11 @@ export const GlobalStyles = createGlobalStyle`
         max-width: 100%;
         height: 100%;
         object-fit: cover;
+    }
+
+
+    section{
+        padding: 6.25rem 0;
     }
 
     

@@ -23,7 +23,7 @@ export const NavMenuMobileStyled = styled(motion.div)`
   align-items: center;
   position: fixed;
   top: var(--h-nav);
-  right: 2vw;
+  right: 0;
   padding: 1.2rem 1rem;
   display: flex;
   flex-direction: column;
@@ -35,6 +35,6 @@ export const NavMenuLinkStyled = styled(NavLink)`
   font-size: 1rem;
 
   &.active {
-    color: var(--text-2);
+    color: var(--ui-2);
   }
 `

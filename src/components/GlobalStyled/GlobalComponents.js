@@ -16,5 +16,9 @@ export const ResetButton = styled.button`
   color: var(--text);
   display: grid;
   place-items: center;
+  font-size: var(--size-icon);
+`
+
+export const Subtitle = styled(TextGradient)`
   font-size: 1.5rem;
 `
