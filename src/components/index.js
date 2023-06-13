@@ -1,0 +1,5 @@
+export * from './GlobalStyled/GlobalComponents'
+export * from './GlobalStyled/GlobalStyles'
+export { default as Hero } from './Hero/Hero'
+export { default as Layout } from './Layout/Layout'
+export { default as NavBar } from './Navbar/NavBar'
