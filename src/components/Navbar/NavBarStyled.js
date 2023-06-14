@@ -17,6 +17,7 @@ export const NavStyled = styled.nav`
   padding: 0 1rem;
   border-bottom-left-radius: var(--radius);
   border-bottom-right-radius: var(--radius);
+
   background-color: ${({ showMenu, scrolled, showCart }) =>
     showMenu || scrolled || showCart ? 'var(--bg-2)' : 'none'};
   transition: background-color ease 300ms;

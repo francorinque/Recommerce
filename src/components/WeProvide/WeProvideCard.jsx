@@ -5,9 +5,9 @@ import {
   WCardParagraphStyled,
 } from './WeProvideStyled'
 
-const WeProvideCard = ({ title, paragraph, Icon }) => {
+const WeProvideCard = ({ id, title, paragraph, Icon, isNearScreen }) => {
   return (
-    <WeProvideCardStyled>
+    <WeProvideCardStyled isNearScreen={isNearScreen} >
       <WCardIconStyled>{<Icon />}</WCardIconStyled>
       <WCardTitleStyled>{title}</WCardTitleStyled>
       <WCardParagraphStyled>{paragraph}</WCardParagraphStyled>

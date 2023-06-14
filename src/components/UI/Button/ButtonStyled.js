@@ -16,6 +16,11 @@ export const ButtonStyled = styled(motion.button)`
   font-size: 1rem;
   font-weight: var(--semibold);
 
+  &:disabled {
+    opacity: 50%;
+    cursor: not-allowed;
+  }
+
   ${({ secundary }) =>
     secundary &&
     css`

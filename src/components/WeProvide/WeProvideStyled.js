@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 import { Subtitle } from '../GlobalStyled/GlobalComponents'
 
 export const WeProvideStyled = styled.section`
@@ -25,6 +25,14 @@ export const WeProvideCardStyled = styled.div`
   align-items: center;
   gap: 0.5rem;
   text-align: center;
+  opacity: 0;
+
+  ${({ isNearScreen }) =>
+    isNearScreen &&
+    css`
+      opacity: 1;
+      transition: opacity ease 400ms;
+    `}
 `
 
 export const WCardIconStyled = styled.div`
