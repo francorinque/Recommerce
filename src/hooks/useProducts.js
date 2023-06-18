@@ -6,6 +6,7 @@ export const useProducts = () => {
   const { filters, setFilters } = useContext(FiltersContext)
 
   let products = useSelector((state) => state.products.products)
+  let isLoading = useSelector((state) => state.products.isLoading)
   let { maxPrice } = useSelector((state) => state.products)
 
   const filterProducts = () => {
@@ -19,5 +20,5 @@ export const useProducts = () => {
 
   let filteredProducts = filterProducts()
 
-  return { filteredProducts, filters, setFilters, maxPrice }
+  return { filteredProducts, isLoading, filters, setFilters, maxPrice }
 }

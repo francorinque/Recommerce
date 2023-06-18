@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 
+
 export const ProductsCardsStyled = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 350px));

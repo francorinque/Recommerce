@@ -12,18 +12,32 @@ const MenuProvider = ({ children }) => {
   const [showMenu, setShowMenu] = useState(false)
   const [showCart, setShowCart] = useState(false)
 
-  const toggleMenu = () => setShowMenu(!showMenu)
-  const closeMenu = () => setShowMenu(false)
+  const closeAll = () => {
+    if (showCart) {
+      setShowCart(false)
+    }
+    if (showMenu) {
+      setShowMenu(false)
+    }
+  }
 
-  const toggleCart = () => setShowCart(!showCart)
+  const toggleMenu = () => {
+    setShowMenu(!showMenu)
+    closeAll()
+  }
+
+  const toggleCart = () => {
+    setShowCart(!showCart)
+    closeAll()
+  }
 
   const value = {
     Links,
     toggleMenu,
     showMenu,
-    closeMenu,
     showCart,
     toggleCart,
+    closeAll,
   }
   return <MenuContext.Provider value={value}>{children}</MenuContext.Provider>
 }

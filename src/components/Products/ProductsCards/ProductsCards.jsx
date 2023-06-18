@@ -1,23 +1,27 @@
 import {
-  ProductsCardsStyled,
   ProductsCardsBtnsStyled,
+  ProductsCardsStyled,
 } from './ProductsCardsStyled'
 
-import { usePagination, useProducts } from '../../../hooks'
-import ProductsCard from './ProductsCard'
-import Button from '../../UI/Button/Button'
 import { TfiAngleDown, TfiAngleUp } from 'react-icons/tfi'
+import { useSelector } from 'react-redux'
+import { usePagination, useProducts } from '../../../hooks'
+//components
+import Button from '../../UI/Button/Button'
+import ProductsCard from './ProductsCard'
 
 const ProductsCards = () => {
+  const { cart } = useSelector((state) => state.cart)
   const { filteredProducts } = useProducts()
   const { limit, perPage, handlePrev, handleNext } = usePagination()
 
   return (
     <>
       <ProductsCardsStyled>
-        {filteredProducts.slice(0, perPage)?.map((prod) => (
-          <ProductsCard key={prod.id} {...prod} />
-        ))}
+        {filteredProducts.slice(0, perPage)?.map((prod) => {
+          let inCart = cart?.find((el) => el.id === prod.id)
+          return <ProductsCard key={prod.id} prod={prod} inCart={inCart} />
+        })}
       </ProductsCardsStyled>
 
       <ProductsCardsBtnsStyled>

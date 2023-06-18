@@ -1,44 +1,51 @@
 import {
   LogoStyled,
-  NavCloseStyled,
-  NavStyled,
-  NavIconsStyled,
   NavCartStyled,
+  NavCloseStyled,
+  NavContainerStyled,
+  NavIconsStyled,
+  NavStyled,
 } from './NavBarStyled'
 
+import { useContext } from 'react'
 import { TfiAlignJustify, TfiClose, TfiShoppingCart } from 'react-icons/tfi'
 import { Link } from 'react-router-dom'
-import { useNav } from '../../hooks/useNav'
-import NavMenuMobile from './NavMenu/NavMenuMobile'
-import NavMenuDesktop from './NavMenu/NavMenuDesktop'
-import NavCart from './NavCart/NavCart'
-import { useContext } from 'react'
 import { MenuContext } from '../../context/MenuContext'
+import { useNav } from '../../hooks/useNav'
+import NavCart from './NavCart/NavCart'
+import NavMenuDesktop from './NavMenu/NavMenuDesktop'
+import NavMenuMobile from './NavMenu/NavMenuMobile'
 
 const NavBar = () => {
   const { scrolled } = useNav()
   const { toggleCart, toggleMenu, showMenu, showCart } = useContext(MenuContext)
 
   return (
-    <NavStyled showMenu={showMenu} scrolled={scrolled} showCart={showCart}>
-      <LogoStyled>
-        <Link to='/'>R</Link>
-      </LogoStyled>
+    <NavContainerStyled
+      showMenu={showMenu}
+      scrolled={scrolled}
+      showCart={showCart}
+    >
+      <NavStyled>
+        <LogoStyled>
+          <Link to='/'>R</Link>
+        </LogoStyled>
 
-      <NavMenuDesktop />
-      <NavMenuMobile />
+        <NavMenuDesktop />
+        <NavMenuMobile />
 
-      <NavIconsStyled>
-        <NavCartStyled onClick={toggleCart}>
-          <TfiShoppingCart />
-        </NavCartStyled>
-        <NavCloseStyled onClick={toggleMenu}>
-          {showMenu ? <TfiClose /> : <TfiAlignJustify />}
-        </NavCloseStyled>
-      </NavIconsStyled>
+        <NavIconsStyled>
+          <NavCartStyled onClick={toggleCart}>
+            <TfiShoppingCart />
+          </NavCartStyled>
+          <NavCloseStyled onClick={toggleMenu}>
+            {showMenu ? <TfiClose /> : <TfiAlignJustify />}
+          </NavCloseStyled>
+        </NavIconsStyled>
 
-      <NavCart />
-    </NavStyled>
+        <NavCart />
+      </NavStyled>
+    </NavContainerStyled>
   )
 }
 export default NavBar

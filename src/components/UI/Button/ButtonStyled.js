@@ -19,6 +19,7 @@ export const ButtonStyled = styled(motion.button)`
   &:disabled {
     opacity: 50%;
     cursor: not-allowed;
+    filter: grayscale(0.4);
   }
 
   ${({ secundary }) =>
@@ -27,5 +28,12 @@ export const ButtonStyled = styled(motion.button)`
       background-color: transparent;
       outline: thin solid var(--ui);
       color: var(--ui);
+    `}
+
+  ${({ warning }) =>
+    warning &&
+    css`
+      background-color: var(--warning);
+      color: var(--text);
     `}
 `

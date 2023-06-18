@@ -3,12 +3,12 @@ import { NavMenuDesktopStyled, NavMenuLinkStyled } from './NavMenuStyled'
 import { MenuContext } from '../../../context/MenuContext'
 
 const NavMenuDesktop = () => {
-  const { Links } = useContext(MenuContext)
+  const { Links, closeAll } = useContext(MenuContext)
 
   return (
     <NavMenuDesktopStyled>
       {Links.map((link) => (
-        <NavMenuLinkStyled key={link.id} to={link.path}>
+        <NavMenuLinkStyled key={link.id} to={link.path} onClick={closeAll}>
           {link.text}
         </NavMenuLinkStyled>
       ))}

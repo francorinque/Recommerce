@@ -2,25 +2,28 @@ import styled from 'styled-components'
 import { ResetButton } from '../GlobalStyled/GlobalComponents'
 import { md } from '../../utils/breakpoints.utility'
 
-export const NavStyled = styled.nav`
+export const NavContainerStyled = styled.header`
+  width: 100%;
+  height: var(--h-nav);
   position: fixed;
   z-index: 99;
   top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: min(100%, var(--max-w));
-  margin-inline: auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: var(--h-nav);
-  padding: 0 1rem;
+  transition: background-color ease 300ms;
   border-bottom-left-radius: var(--radius);
   border-bottom-right-radius: var(--radius);
 
   background-color: ${({ showMenu, scrolled, showCart }) =>
     showMenu || scrolled || showCart ? 'var(--bg-2)' : 'none'};
-  transition: background-color ease 300ms;
+`
+
+export const NavStyled = styled.nav`
+  width: min(100%, var(--max-w));
+  margin-inline: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  padding: 0 1rem;
 `
 
 export const LogoStyled = styled.div`

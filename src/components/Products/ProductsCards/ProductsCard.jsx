@@ -8,13 +8,17 @@ import {
   ProductCardBtnStyled,
 } from './ProductsCardsStyled'
 
-import { TfiPlus } from 'react-icons/tfi'
+import { TfiPlus, TfiClose } from 'react-icons/tfi'
+import { useDispatch } from 'react-redux'
+import { addToCart, removeFromCart } from '../../../redux/cart/cart.slice'
+import { cutTitle } from '../../../utils/cutTitle.utility'
 
-const cutTitle = (str) => {
-  return str.length > 16 ? `${str.substring(0, 16)}...` : str
-}
+let buttonSize = '30px'
 
-const ProductsCard = ({ title, price, thumbnail }) => {
+const ProductsCard = ({ prod, inCart }) => {
+  const { id, title, price, thumbnail } = prod
+  const dispatch = useDispatch()
+
   return (
     <ProductCardStyled>
       <ProductCardImgStyled src={thumbnail} alt={title} />
@@ -25,9 +29,24 @@ const ProductsCard = ({ title, price, thumbnail }) => {
       </ProductCardInfoStyled>
 
       <ProductCardBtnStyled>
-        <Button w='40px' h='40px'>
-          <TfiPlus />
-        </Button>
+        {inCart ? (
+          <Button
+            w={buttonSize}
+            h={buttonSize}
+            warning
+            onClick={() => dispatch(removeFromCart(id))}
+          >
+            <TfiClose />
+          </Button>
+        ) : (
+          <Button
+            w={buttonSize}
+            h={buttonSize}
+            onClick={() => dispatch(addToCart(prod))}
+          >
+            <TfiPlus />
+          </Button>
+        )}
       </ProductCardBtnStyled>
     </ProductCardStyled>
   )
