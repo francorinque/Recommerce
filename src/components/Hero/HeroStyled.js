@@ -23,7 +23,7 @@ export const HeroTexts = styled.div`
 
 export const HeroTitleStyled = styled(TextGradient)`
   font-size: clamp(1.8rem, 2vw, 2.5rem);
-  max-width: 500px;
+  max-width: 400px;
   margin-inline: auto;
 `
 

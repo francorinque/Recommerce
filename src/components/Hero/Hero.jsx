@@ -1,21 +1,23 @@
 import Button from '../UI/Button/Button'
 import {
+  HeroImgStyled,
   HeroStyled,
   HeroTexts,
-  HeroTitleStyled,
-  HeroImgStyled
+  HeroTitleStyled
 } from './HeroStyled'
 
 import HeroImg from '../../assets/hero-img.jpg'
+import { useContext } from 'react'
+import { RectContext } from '../../context/RectContext'
 
 const Hero = () => {
+  const { rect } = useContext(RectContext)
+
   return (
     <HeroStyled>
       <HeroTexts>
         <HeroTitleStyled>The best price, just a click away</HeroTitleStyled>
-        <Button>
-          <a href='#products'>Buy now</a>
-        </Button>
+        <Button onClick={() => window.scrollTo({ top: rect })}>See now</Button>
       </HeroTexts>
 
       <HeroImgStyled>

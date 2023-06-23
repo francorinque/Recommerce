@@ -3,7 +3,7 @@ import { createContext } from 'react'
 
 const Links = [
   { id: 1, text: 'Home', path: '/' },
-  { id: 2, text: 'About', path: '/about' },
+  { id: 2, text: 'About', path: '/about' }
 ]
 
 export const MenuContext = createContext()
@@ -37,7 +37,7 @@ const MenuProvider = ({ children }) => {
     showMenu,
     showCart,
     toggleCart,
-    closeAll,
+    closeAll
   }
   return <MenuContext.Provider value={value}>{children}</MenuContext.Provider>
 }

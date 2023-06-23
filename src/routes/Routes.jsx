@@ -1,9 +1,8 @@
 import { BrowserRouter, Route, Routes as Switch } from 'react-router-dom'
 
-import { Layout, NavBar } from '../components'
+import { Footer, Layout, NavBar, Overlay } from '../components'
 import { lazy } from 'react'
 import { Suspense } from 'react'
-import Overlay from '../components/UI/Overlay/Overlay'
 
 const HomePage = lazy(() => import('../pages/HomePage/HomePage'))
 const AboutPage = lazy(() => import('../pages/About/About'))
@@ -21,6 +20,7 @@ const Routes = () => {
           </Switch>
         </Suspense>
       </Layout>
+      <Footer />
     </BrowserRouter>
   )
 }
