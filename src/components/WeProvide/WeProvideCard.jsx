@@ -2,12 +2,12 @@ import {
   WeProvideCardStyled,
   WCardIconStyled,
   WCardTitleStyled,
-  WCardParagraphStyled,
+  WCardParagraphStyled
 } from './WeProvideStyled'
 
-const WeProvideCard = ({ id, title, paragraph, Icon, isNearScreen }) => {
+const WeProvideCard = ({ title, paragraph, Icon, $isNearScreen }) => {
   return (
-    <WeProvideCardStyled isNearScreen={isNearScreen} >
+    <WeProvideCardStyled $isNearScreen={$isNearScreen}>
       <WCardIconStyled>{<Icon />}</WCardIconStyled>
       <WCardTitleStyled>{title}</WCardTitleStyled>
       <WCardParagraphStyled>{paragraph}</WCardParagraphStyled>

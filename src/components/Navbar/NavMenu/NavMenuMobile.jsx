@@ -5,16 +5,16 @@ import { AnimatePresence } from 'framer-motion'
 import { MenuContext } from '../../../context/MenuContext'
 
 const NavMenuMobile = () => {
-  const { Links, showMenu, closeAll } = useContext(MenuContext)
+  const { Links, showMenu } = useContext(MenuContext)
   const menuMobileVariants = {
     closed: {
-      scale: 0,
+      scale: 0
     },
     open: {
       scale: 1,
-      transition: { delay: 0.2 },
+      transition: { delay: 0.2 }
     },
-    exit: { scale: 0 },
+    exit: { scale: 0 }
   }
 
   return (
@@ -27,7 +27,7 @@ const NavMenuMobile = () => {
           exit='exit'
         >
           {Links.map((link) => (
-            <NavMenuLinkStyled key={link.id} to={link.path} onClick={closeAll}>
+            <NavMenuLinkStyled key={link.id} to={link.path}>
               {link.text}
             </NavMenuLinkStyled>
           ))}

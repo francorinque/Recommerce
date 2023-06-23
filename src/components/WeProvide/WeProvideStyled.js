@@ -27,8 +27,8 @@ export const WeProvideCardStyled = styled.div`
   text-align: center;
   opacity: 0;
 
-  ${({ isNearScreen }) =>
-    isNearScreen &&
+  ${({ $isNearScreen }) =>
+    $isNearScreen &&
     css`
       opacity: 1;
       transition: opacity ease 400ms;

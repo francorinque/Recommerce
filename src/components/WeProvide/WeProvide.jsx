@@ -1,7 +1,7 @@
 import {
   WeProvideStyled,
   WeProvideTitle,
-  WeProvideCards,
+  WeProvideCards
 } from './WeProvideStyled'
 
 import { useNearScreen } from '../../hooks/useNearScreen'
@@ -13,7 +13,7 @@ const WeProvide = () => {
   const elementRef = useRef(null)
   const { isNearScreen } = useNearScreen({
     once: true,
-    externalRef: elementRef,
+    externalRef: elementRef
   })
 
   return (
@@ -25,7 +25,7 @@ const WeProvide = () => {
             key={card.id}
             {...card}
             Icon={card.icon}
-            isNearScreen={isNearScreen}
+            $isNearScreen={isNearScreen}
           />
         ))}
       </WeProvideCards>

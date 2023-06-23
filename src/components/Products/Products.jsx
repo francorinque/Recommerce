@@ -14,7 +14,7 @@ const Products = () => {
   }
 
   return (
-    <ProductsStyled>
+    <ProductsStyled id='products'>
       <ProductsTitleStyled>Our Products</ProductsTitleStyled>
       <ProductsFilter />
       <ProductsCards />

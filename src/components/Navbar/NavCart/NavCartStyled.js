@@ -1,8 +1,7 @@
 import styled from 'styled-components'
-import { motion } from 'framer-motion'
 import { Subtitle, ResetButton } from '../../GlobalStyled/GlobalComponents'
 
-export const Container = styled(motion.div)`
+export const Container = styled.div`
   position: fixed;
   top: var(--h-nav);
   right: 0;
@@ -16,6 +15,8 @@ export const Container = styled(motion.div)`
   display: flex;
   flex-direction: column;
   gap: 2rem;
+  transition: translate ease 200ms;
+  translate: ${({ $showCart }) => ($showCart ? '0' : '100vw')} 0;
 `
 
 export const Header = styled.div`
@@ -34,7 +35,7 @@ export const ProductsWrapper = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  height: 400px;
+  height: 350px;
   overflow-y: auto;
 `
 

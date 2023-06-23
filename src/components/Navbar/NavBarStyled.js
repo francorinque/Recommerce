@@ -12,8 +12,8 @@ export const NavContainerStyled = styled.header`
   border-bottom-left-radius: var(--radius);
   border-bottom-right-radius: var(--radius);
 
-  background-color: ${({ showMenu, scrolled, showCart }) =>
-    showMenu || scrolled || showCart ? 'var(--bg-2)' : 'none'};
+  background-color: ${({ $showMenu, $scrolled, $showCart }) =>
+    $showMenu || $scrolled || $showCart ? 'var(--bg-2)' : 'none'};
 `
 
 export const NavStyled = styled.nav`
@@ -43,4 +43,16 @@ export const NavIconsStyled = styled.div`
   gap: 0.8rem;
 `
 
-export const NavCartStyled = styled(ResetButton)``
+export const NavCartStyled = styled(ResetButton)`
+  position: relative;
+`
+
+export const NavCartLengthStyled = styled.span`
+  position: absolute;
+  top: -8px;
+  left: -12px;
+  display: block;
+  color: var(--ui);
+  font-weight: var(--semibold);
+  font-size: 14px;
+`

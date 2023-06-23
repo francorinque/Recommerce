@@ -1,8 +1,12 @@
-import { BrowserRouter, Routes as Switch, Route } from 'react-router-dom'
+import { BrowserRouter, Route, Routes as Switch } from 'react-router-dom'
 
 import { Layout, NavBar } from '../components'
-import { HomePage } from '../pages'
+import { lazy } from 'react'
+import { Suspense } from 'react'
 import Overlay from '../components/UI/Overlay/Overlay'
+
+const HomePage = lazy(() => import('../pages/HomePage/HomePage'))
+const AboutPage = lazy(() => import('../pages/About/About'))
 
 const Routes = () => {
   return (
@@ -10,9 +14,12 @@ const Routes = () => {
       <NavBar />
       <Overlay />
       <Layout>
-        <Switch>
-          <Route path='/' element={<HomePage />} />
-        </Switch>
+        <Suspense fallback={null}>
+          <Switch>
+            <Route path='/about' element={<AboutPage />} />
+            <Route path='/' element={<HomePage />} />
+          </Switch>
+        </Suspense>
       </Layout>
     </BrowserRouter>
   )

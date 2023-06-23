@@ -7,7 +7,11 @@ const Overlay = () => {
   const { showCart, showMenu, closeAll } = useContext(MenuContext)
 
   return (
-    <OverlayStyled showCart={showCart} showMenu={showMenu} onClick={closeAll} />
+    <OverlayStyled
+      $showCart={showCart}
+      $showMenu={showMenu}
+      onClick={closeAll}
+    />
   )
 }
 export default Overlay

@@ -3,7 +3,7 @@ import {
   HeroStyled,
   HeroTexts,
   HeroTitleStyled,
-  HeroImgStyled,
+  HeroImgStyled
 } from './HeroStyled'
 
 import HeroImg from '../../assets/hero-img.jpg'
@@ -12,8 +12,10 @@ const Hero = () => {
   return (
     <HeroStyled>
       <HeroTexts>
-        <HeroTitleStyled>Elevate your style with our products</HeroTitleStyled>
-        <Button>Buy now</Button>
+        <HeroTitleStyled>The best price, just a click away</HeroTitleStyled>
+        <Button>
+          <a href='#products'>Buy now</a>
+        </Button>
       </HeroTexts>
 
       <HeroImgStyled>

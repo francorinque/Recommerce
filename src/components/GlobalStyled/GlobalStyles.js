@@ -28,17 +28,20 @@ export const GlobalStyles = createGlobalStyle`
 
     *{
         &::-webkit-scrollbar {
-  width: .6rem;               /* width of the entire scrollbar */
-}
+        width: .6rem;              
+    }   
 
-&::-webkit-scrollbar-track {
-  background: none;        /* color of the tracking area */
-}
+    &::-webkit-scrollbar-track {
+        background: none;      
+    }
 
-&::-webkit-scrollbar-thumb {
-  background-color: var(--text-2);    /* color of the scroll thumb */
-  border-radius: var(--radius);       /* roundness of the scroll thumb */
-}
+    &::-webkit-scrollbar-thumb {
+        background-color: var(--text-2);    
+        border-radius: var(--radius);       
+    }
+    }
+    html{
+        scroll-behavior: smooth;
     }
 
     body{
@@ -46,7 +49,7 @@ export const GlobalStyles = createGlobalStyle`
         font-family: 'Montserrat', sans-serif;
         color: var(--text);
         background-color: var(--bg);
-
+        
       
     }
     
