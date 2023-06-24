@@ -1,14 +1,14 @@
-import Button from '../UI/Button/Button'
+import Button from "../UI/Button/Button"
 import {
   HeroImgStyled,
   HeroStyled,
   HeroTexts,
-  HeroTitleStyled
-} from './HeroStyled'
+  HeroTitleStyled,
+} from "./HeroStyled"
 
-import HeroImg from '../../assets/hero-img.jpg'
-import { useContext } from 'react'
-import { RectContext } from '../../context/RectContext'
+import HeroImg from "../../assets/hero-img.webp"
+import { useContext } from "react"
+import { RectContext } from "../../context/RectContext"
 
 const Hero = () => {
   const { rect } = useContext(RectContext)
@@ -21,7 +21,7 @@ const Hero = () => {
       </HeroTexts>
 
       <HeroImgStyled>
-        <img src={HeroImg} alt='photo banner' />
+        <img src={HeroImg} alt="photo banner" />
       </HeroImgStyled>
     </HeroStyled>
   )

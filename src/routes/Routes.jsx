@@ -1,11 +1,8 @@
-import { BrowserRouter, Route, Routes as Switch } from 'react-router-dom'
+import { BrowserRouter, Route, Routes as Switch } from "react-router-dom"
 
-import { Footer, Layout, NavBar, Overlay } from '../components'
-import { lazy } from 'react'
-import { Suspense } from 'react'
-
-const HomePage = lazy(() => import('../pages/HomePage/HomePage'))
-const AboutPage = lazy(() => import('../pages/About/About'))
+import { Footer, Layout, NavBar, Overlay } from "../components"
+import About from "../pages/About/About"
+import HomePage from "../pages/HomePage/HomePage"
 
 const Routes = () => {
   return (
@@ -13,12 +10,10 @@ const Routes = () => {
       <NavBar />
       <Overlay />
       <Layout>
-        <Suspense fallback={null}>
-          <Switch>
-            <Route path='/about' element={<AboutPage />} />
-            <Route path='/' element={<HomePage />} />
-          </Switch>
-        </Suspense>
+        <Switch>
+          <Route path="/about" element={<About />} />
+          <Route path="/" element={<HomePage />} />
+        </Switch>
       </Layout>
       <Footer />
     </BrowserRouter>

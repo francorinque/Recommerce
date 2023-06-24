@@ -1,6 +1,7 @@
 import { useContext } from 'react'
-import { NavMenuDesktopStyled, NavMenuLinkStyled } from './NavMenuStyled'
+import { NavMenuDesktopStyled } from './NavMenuStyled'
 import { MenuContext } from '../../../context/MenuContext'
+import MyLink from '../../UI/MyLink/MyLink'
 
 const NavMenuDesktop = () => {
   const { Links } = useContext(MenuContext)
@@ -8,9 +9,9 @@ const NavMenuDesktop = () => {
   return (
     <NavMenuDesktopStyled>
       {Links.map((link) => (
-        <NavMenuLinkStyled key={link.id} to={link.path}>
+        <MyLink key={link.id} to={link.path}>
           {link.text}
-        </NavMenuLinkStyled>
+        </MyLink>
       ))}
     </NavMenuDesktopStyled>
   )

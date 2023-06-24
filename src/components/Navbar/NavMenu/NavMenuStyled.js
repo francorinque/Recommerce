@@ -31,10 +31,4 @@ export const NavMenuMobileStyled = styled(motion.div)`
   border-radius: var(--radius);
 `
 
-export const NavMenuLinkStyled = styled(NavLink)`
-  font-size: 1rem;
 
-  &.active {
-    color: var(--ui-2);
-  }
-`

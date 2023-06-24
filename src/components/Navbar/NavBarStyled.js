@@ -1,6 +1,6 @@
-import styled from 'styled-components'
-import { ResetButton } from '../GlobalStyled/GlobalComponents'
-import { md } from '../../utils/breakpoints.utility'
+import styled from "styled-components"
+import { ResetButton } from "../GlobalStyled/GlobalComponents"
+import { md } from "../../utils/breakpoints.utility"
 
 export const NavContainerStyled = styled.header`
   width: 100%;
@@ -13,7 +13,7 @@ export const NavContainerStyled = styled.header`
   border-bottom-right-radius: var(--radius);
 
   background-color: ${({ $showMenu, $scrolled, $showCart }) =>
-    $showMenu || $scrolled || $showCart ? 'var(--bg-2)' : 'none'};
+    $showMenu || $scrolled || $showCart ? "var(--bg-2)" : "none"};
 `
 
 export const NavStyled = styled.nav`
@@ -24,11 +24,6 @@ export const NavStyled = styled.nav`
   align-items: center;
   height: 100%;
   padding: 0 1rem;
-`
-
-export const LogoStyled = styled.div`
-  font-size: clamp(2rem, 2vw, 2.5rem);
-  font-weight: var(--bold);
 `
 
 export const NavCloseStyled = styled(ResetButton)`

@@ -1,22 +1,21 @@
 import {
-  LogoStyled,
+  NavCartLengthStyled,
   NavCartStyled,
   NavCloseStyled,
   NavContainerStyled,
   NavIconsStyled,
   NavStyled,
-  NavCartLengthStyled
-} from './NavBarStyled'
+} from "./NavBarStyled"
 
-import { useContext } from 'react'
-import { TfiAlignJustify, TfiClose, TfiShoppingCart } from 'react-icons/tfi'
-import { Link } from 'react-router-dom'
-import { MenuContext } from '../../context/MenuContext'
-import { useNav } from '../../hooks/useNav'
-import NavCart from './NavCart/NavCart'
-import NavMenuDesktop from './NavMenu/NavMenuDesktop'
-import NavMenuMobile from './NavMenu/NavMenuMobile'
-import { useSelector } from 'react-redux'
+import { useContext } from "react"
+import { TfiAlignJustify, TfiClose, TfiShoppingCart } from "react-icons/tfi"
+import { useSelector } from "react-redux"
+import { MenuContext } from "../../context/MenuContext"
+import { useNav } from "../../hooks/useNav"
+import Logo from "../UI/Logo/Logo"
+import NavCart from "./NavCart/NavCart"
+import NavMenuDesktop from "./NavMenu/NavMenuDesktop"
+import NavMenuMobile from "./NavMenu/NavMenuMobile"
 
 const NavBar = () => {
   const { scrolled } = useNav()
@@ -30,9 +29,7 @@ const NavBar = () => {
       $showCart={showCart}
     >
       <NavStyled>
-        <LogoStyled>
-          <Link to='/'>R</Link>
-        </LogoStyled>
+        <Logo w="50px" />
 
         <NavMenuDesktop />
         <NavMenuMobile />

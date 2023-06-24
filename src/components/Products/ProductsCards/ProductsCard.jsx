@@ -1,4 +1,4 @@
-import Button from '../../UI/Button/Button'
+import Button from "../../UI/Button/Button"
 import {
   ProductCardStyled,
   ProductCardImgStyled,
@@ -6,14 +6,14 @@ import {
   ProductCardTitleStyled,
   ProductCardPriceStyled,
   ProductCardBtnStyled,
-} from './ProductsCardsStyled'
+} from "./ProductsCardsStyled"
 
-import { TfiPlus, TfiClose } from 'react-icons/tfi'
-import { useDispatch } from 'react-redux'
-import { addToCart, removeFromCart } from '../../../redux/cart/cart.slice'
-import { cutTitle } from '../../../utils/cutTitle.utility'
+import { TfiPlus, TfiClose } from "react-icons/tfi"
+import { useDispatch } from "react-redux"
+import { addToCart, removeFromCart } from "../../../redux/cart/cart.slice"
+import { cutTitle } from "../../../utils/cutTitle.utility"
 
-let buttonSize = '30px'
+let buttonSize = "30px"
 
 const ProductsCard = ({ prod, inCart }) => {
   const { id, title, price, thumbnail } = prod
@@ -21,7 +21,7 @@ const ProductsCard = ({ prod, inCart }) => {
 
   return (
     <ProductCardStyled>
-      <ProductCardImgStyled src={thumbnail} alt={title} />
+      <ProductCardImgStyled src={thumbnail} alt={title} loading="lazy" />
 
       <ProductCardInfoStyled>
         <ProductCardTitleStyled>{cutTitle(title)}</ProductCardTitleStyled>

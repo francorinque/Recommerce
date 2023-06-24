@@ -1,5 +1,5 @@
-import styled from 'styled-components'
-import { Subtitle, ResetButton } from '../../GlobalStyled/GlobalComponents'
+import styled from "styled-components"
+import { Subtitle, ResetButton } from "../../GlobalStyled/GlobalComponents"
 
 export const Container = styled.div`
   position: fixed;
@@ -16,7 +16,7 @@ export const Container = styled.div`
   flex-direction: column;
   gap: 2rem;
   transition: translate ease 200ms;
-  translate: ${({ $showCart }) => ($showCart ? '0' : '100vw')} 0;
+  translate: ${({ $showCart }) => ($showCart ? "0" : "100vw")} 0;
 `
 
 export const Header = styled.div`
@@ -35,7 +35,7 @@ export const ProductsWrapper = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  height: 350px;
+  height: 300px;
   overflow-y: auto;
 `
 
@@ -75,6 +75,12 @@ export const ImgWrapper = styled.figure`
   height: 70px;
   border-radius: var(--radius);
   overflow: hidden;
+`
+
+export const TotalPrice = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 `
 
 export const Footer = styled.div`
