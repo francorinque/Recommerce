@@ -16,6 +16,7 @@ import { clearCart } from "../../../redux/cart/cart.slice"
 import Button from "../../UI/Button/Button"
 import NavCartProduct from "./NavCartProduct"
 import { useContext } from "react"
+import { Price } from "../../GlobalStyled/GlobalComponents"
 
 const NavCart = () => {
   const { closeAll, showCart } = useContext(MenuContext)
@@ -47,7 +48,7 @@ const NavCart = () => {
         </ProductsWrapper>
         <TotalPrice>
           <span>Total:</span>
-          <span>${total}</span>
+          <Price>${total}</Price>
         </TotalPrice>
         <Footer>
           <Button

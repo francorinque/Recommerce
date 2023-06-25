@@ -1,13 +1,22 @@
-import axios from 'axios'
+import axios from "axios"
 import {
   setProducts,
   startProducts,
   errorProducts,
-} from '../redux/products/products.slice'
+} from "../redux/products/products.slice"
 
 const API = axios.create({
-  baseURL: 'https://dummyjson.com/products',
+  baseURL: "https://dummyjson.com/products",
 })
+
+export const getSingleProduct = async ({ productId }) => {
+  try {
+    const { data } = await API.get(`/${productId}`)
+    return data
+  } catch (error) {
+    console.log(error)
+  }
+}
 
 export const getAllProducts = () => {
   return async (dispatch) => {

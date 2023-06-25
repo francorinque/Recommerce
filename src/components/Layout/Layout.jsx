@@ -1,9 +1,9 @@
-import { LayoutStyled } from './LayoutStyled'
+import { LayoutStyled } from "./LayoutStyled"
 
-import { useLocation } from 'react-router-dom'
-import { useEffect } from 'react'
-import { MenuContext } from '../../context/MenuContext'
-import { useContext } from 'react'
+import { useLocation } from "react-router-dom"
+import { useEffect } from "react"
+import { MenuContext } from "../../context/MenuContext"
+import { useContext } from "react"
 
 const Layout = ({ children }) => {
   const { pathname } = useLocation()
@@ -11,6 +11,7 @@ const Layout = ({ children }) => {
 
   useEffect(() => {
     closeAll()
+    window.scrollTo({ top: 0 })
   }, [pathname])
 
   return <LayoutStyled>{children}</LayoutStyled>

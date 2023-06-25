@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from "styled-components"
 
 export const TextGradient = styled.h1`
   background: -webkit-linear-gradient(1deg, var(--text), #9ca3af);
@@ -21,4 +21,9 @@ export const ResetButton = styled.button`
 
 export const Subtitle = styled(TextGradient)`
   font-size: 1.5rem;
+`
+
+export const Price = styled.span`
+  color: var(--price);
+  font-weight: var(--semibold);
 `

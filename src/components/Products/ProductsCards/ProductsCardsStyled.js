@@ -1,5 +1,4 @@
-import styled from 'styled-components'
-
+import styled from "styled-components"
 
 export const ProductsCardsStyled = styled.div`
   display: grid;
@@ -30,8 +29,6 @@ export const ProductCardTitleStyled = styled.h4`
   font-weight: var(--semibold);
   font-size: clamp(1.2rem, 2vw, 1.3rem);
 `
-
-export const ProductCardPriceStyled = styled.span``
 
 export const ProductCardBtnStyled = styled.div`
   width: 100%;

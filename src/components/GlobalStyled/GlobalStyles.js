@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components'
+import { createGlobalStyle } from "styled-components"
 
 export const GlobalStyles = createGlobalStyle`
     *,::before,::after{
@@ -23,6 +23,7 @@ export const GlobalStyles = createGlobalStyle`
         --h-nav: 80px;
         --max-w: 1300px;
         --radius: 5px;
+        --price: #e4e4e7;
         --size-icon: 1.2rem;
     }
 
