@@ -6,17 +6,19 @@ import {
   Desc,
   SmallTexts,
   BtnsWrapper,
-} from "./SingleProductStyled"
+} from './SingleProductStyled'
 
-import Add from "../UI/Add/Add"
-import Button from "../UI/Button/Button"
-import { useSelector } from "react-redux"
-import { Price } from "../GlobalStyled/GlobalComponents"
+import Add from '../UI/Add/Add'
+import Button from '../UI/Button/Button'
+import { Price } from '../GlobalStyled/GlobalComponents'
+import Loader from '../UI/Loader/Loader'
 
-const SingleProduct = ({ prod }) => {
+const SingleProduct = ({ prod, loading }) => {
   const { id, thumbnail, title, description, brand, price } = prod
-  const { cart } = useSelector((state) => state.cart)
-  let inCart = cart?.find((el) => el.id === id)
+
+  if (loading) {
+    return <Loader />
+  }
 
   return (
     <Wrapper>
@@ -33,7 +35,7 @@ const SingleProduct = ({ prod }) => {
         </SmallTexts>
 
         <BtnsWrapper>
-          <Add inCart={inCart} id={id} prod={prod} buttonSize="40px" />
+          <Add id={id} prod={prod} buttonSize="40px" />
           <Button>Buy</Button>
         </BtnsWrapper>
       </Info>

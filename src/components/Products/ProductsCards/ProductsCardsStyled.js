@@ -1,4 +1,4 @@
-import styled from "styled-components"
+import styled from 'styled-components'
 
 export const ProductsCardsStyled = styled.div`
   display: grid;
@@ -15,7 +15,7 @@ export const ProductCardStyled = styled.div`
 
 export const ProductCardImgStyled = styled.img`
   height: 250px;
-  border-radius: var(--radius);
+  border-radius: var(--radius-2);
 `
 
 export const ProductCardInfoStyled = styled.div`

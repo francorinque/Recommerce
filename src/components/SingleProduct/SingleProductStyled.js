@@ -1,6 +1,6 @@
-import styled from "styled-components"
-import { md } from "../../utils/breakpoints.utility"
-import { Subtitle } from "../GlobalStyled/GlobalComponents"
+import styled from 'styled-components'
+import { md } from '../../utils/breakpoints.utility'
+import { Subtitle } from '../GlobalStyled/GlobalComponents'
 
 export const Wrapper = styled.div`
   display: grid;
@@ -12,7 +12,10 @@ export const Wrapper = styled.div`
     grid-auto-rows: 400px;
   }
 `
-export const ImgWrapper = styled.figure``
+export const ImgWrapper = styled.figure`
+  overflow: hidden;
+  border-radius: var(--radius);
+`
 
 export const Info = styled.div`
   display: flex;

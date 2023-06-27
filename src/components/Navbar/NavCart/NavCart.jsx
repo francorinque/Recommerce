@@ -7,26 +7,22 @@ import {
   Title,
   Empty,
   TotalPrice,
-} from "./NavCartStyled"
+} from './NavCartStyled'
 
-import { TfiClose } from "react-icons/tfi"
-import { useDispatch, useSelector } from "react-redux"
-import { MenuContext } from "../../../context/MenuContext"
-import { clearCart } from "../../../redux/cart/cart.slice"
-import Button from "../../UI/Button/Button"
-import NavCartProduct from "./NavCartProduct"
-import { useContext } from "react"
-import { Price } from "../../GlobalStyled/GlobalComponents"
+import { TfiClose } from 'react-icons/tfi'
+import { useDispatch, useSelector } from 'react-redux'
+import { MenuContext } from '../../../context/MenuContext'
+import { clearCart } from '../../../redux/cart/cart.slice'
+import Button from '../../UI/Button/Button'
+import NavCartProduct from './NavCartProduct'
+import { useContext } from 'react'
+import { Price } from '../../GlobalStyled/GlobalComponents'
 
 const NavCart = () => {
   const { closeAll, showCart } = useContext(MenuContext)
   const { cart } = useSelector((state) => state.cart)
   const dispatch = useDispatch()
   let total = cart?.reduce((acc, item) => acc + item.price * item.quantity, 0)
-
-  const handleBuy = () => {
-    alert("successful purchase")
-  }
 
   return (
     <>
@@ -58,9 +54,7 @@ const NavCart = () => {
           >
             Clear
           </Button>
-          <Button disabled={!cart.length} onClick={handleBuy}>
-            Buy
-          </Button>
+          <Button disabled={!cart.length}>Buy</Button>
         </Footer>
       </Container>
     </>

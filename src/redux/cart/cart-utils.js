@@ -20,25 +20,9 @@ export const handleAddToCart = ({ arr, newProduct }) => {
 }
 
 //remove
-
 const confirmDelete = () => {
-  let yes
-  if (window.confirm("you're sure ?")) {
-    yes = true
-  } else {
-    yes = false
-  }
-
-  return yes
+  return window.confirm("you're sure ?")
 }
-
-// const confirmDelete = ({ arr, id }) => {
-//   if (window.confirm('are you sure?')) {
-//     return arr.filter((item) => item.id !== id)
-//   } else {
-//     return arr
-//   }
-// }
 
 export const handleRemoveFromCart = ({ arr, productId }) => {
   let itemToDelete = arr.find((item) => item.id === productId)
